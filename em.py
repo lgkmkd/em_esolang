@@ -241,5 +241,5 @@ class MEM:
 		self.ram = {'labels': {}}
 
 cpu = CPU()
-cpu.load_proc([i for i in open('a.out').read().split(' ')])
+cpu.load_proc([i for i in open('examples/compiled/a.out').read().split(' ')])
 cpu.run_proc()
