@@ -154,4 +154,3 @@ If the first bit in an argument is `G`, it refers to the registers:
 
 - [ ] fix goto and jmp
 - [ ] add more kernel calls
-- [ ] 
