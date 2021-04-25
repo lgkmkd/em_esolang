@@ -1,5 +1,0 @@
-todo:
-
-- fix labels and jumps
-- improve kernel
-- 

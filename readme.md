@@ -147,3 +147,11 @@ If the first bit in an argument is `G`, it refers to the registers:
 ...
 `GE`: dg
 `GF`: dh
+
+--------------------------------------------------------------------------------------------------
+
+## Todo: 
+
+- [ ] fix goto and jmp
+- [ ] add more kernel calls
+- [ ] 
