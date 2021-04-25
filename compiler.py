@@ -1,4 +1,4 @@
-code = open('examples/even.txt', 'r').read().lower().split('\n')
+code = open('examples/even.em', 'r').read().lower().split('\n')
 machine = []
 
 reference = {
