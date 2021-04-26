@@ -138,15 +138,15 @@ eax | name | ebx | ecx | edx | de | df
 ##### Machine Code: 
 Each line of assembly is translated into 8 bytes. Each group is split into four groups of two.
 
-1st group: opcode
+1st group: opcode\
 2nd-4th group: arguments in hex
 
-If the first bit in an argument is `G`, it refers to the registers:
-`G0`: eax
-`G1`: ebx
-...
-`GE`: dg
-`GF`: dh
+If the first bit in an argument is `G`, it refers to the registers:\
+G0: eax\
+G1: ebx\
+...\
+GE: dg\
+GF: dh
 
 --------------------------------------------------------------------------------------------------
 
@@ -154,3 +154,6 @@ If the first bit in an argument is `G`, it refers to the registers:
 
 - [ ] fix goto and jmp
 - [ ] add more kernel calls
+- [ ] - timing and clock
+- [ ] - sockets
+- [ ] - os things
