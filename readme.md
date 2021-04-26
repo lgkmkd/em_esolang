@@ -1,5 +1,7 @@
 ## Em (esolang)
 
+***GOTO AND JMP ARE CURRENTLY BROKEN, WILL BE FIXED IN NEXT VERSION***
+
 esoteric language (very) loosely based on cpu architecture. 
 
 assembly like language is compiled into byte machine code that is loaded into an emulated rom. (ex. 02G41500)
