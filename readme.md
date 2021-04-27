@@ -6,11 +6,29 @@ esoteric language (very) loosely based on cpu architecture.
 
 assembly like language is compiled into byte machine code that is loaded into an emulated rom. (ex. 02G41500)
 
+-------------------------------------------------------------------------------------------------------------
 
+## Todo: 
+
+- [ ] fix goto and jmp
+- [ ] add more kernel calls
+- [ ] - timing and clock
+- [ ] - http requests
+- [ ] - os things (make folders, windows.h things)
+- [ ] - sockets
+- [ ] add more features inspired by intel syntax
+- [ ] - pointers
+\
+\
+- [ ] write c compiler in it (Kap)
+
+-------------------------------------------------------------------------------------------------------------
+
+## Documentation: 
 
 instruction syntax: **\[opcode\] \[arg1\] \[arg2\] \[arg3\]** *(ex: mov eax ecx)*
 
-##	instructions:
+##	Instructions:
 
 
  * mov: \[register to move to\] \[register or value to move] (ex: mov eax 5) (ex: mov df de)
@@ -152,10 +170,3 @@ GF: dh
 
 --------------------------------------------------------------------------------------------------
 
-## Todo: 
-
-- [ ] fix goto and jmp
-- [ ] add more kernel calls
-- [ ] - timing and clock
-- [ ] - sockets
-- [ ] - os things
