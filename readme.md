@@ -1,7 +1,5 @@
 ## Em (esolang)
 
-***GOTO AND JMP ARE CURRENTLY BROKEN, WILL BE FIXED WHEN I STOP PROCRASTINATING***
-
 esoteric language (very) loosely based on cpu architecture. 
 
 assembly like language is compiled into byte machine code that is loaded into an emulated rom. (ex. 02G41500)
@@ -10,7 +8,7 @@ assembly like language is compiled into byte machine code that is loaded into an
 
 ## Todo: 
 
-- [ ] fix goto and jmp
+- [x] fix goto and jmp
 - [ ] add more kernel calls
 - [x] - timing and clock
 - [ ] - http requests
