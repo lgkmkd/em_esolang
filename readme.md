@@ -12,15 +12,17 @@ assembly like language is compiled into byte machine code that is loaded into an
 
 - [ ] fix goto and jmp
 - [ ] add more kernel calls
-- [ ] - timing and clock
+- [x] - timing and clock
 - [ ] - http requests
-- [ ] - os things (make folders, windows.h things)
+- [x] - os things (make folders, delete, windows.h things)
 - [ ] - sockets
+- [ ] change compiler to use octal instead of hex
+- [ ] change sleep to use milliseconds (has to use octal first)
 - [ ] add more features inspired by intel syntax
 - [ ] - pointers
 
 
-- [ ] write c compiler in it (Kapp)
+- [ ] write a c compiler in it (Kapp)
 
 -------------------------------------------------------------------------------------------------------------
 
@@ -105,7 +107,7 @@ instruction syntax: **\[opcode\] \[arg1\] \[arg2\] \[arg3\]** *(ex: mov eax ecx)
 
 
 
-##	kernel functions: 
+##	Kernel Functions: 
 
 eax | name | ebx | ecx | edx | de | df
 -|-|-|-|-|-|-
@@ -115,7 +117,11 @@ eax | name | ebx | ecx | edx | de | df
 4 	|	write ram|	value 	|	mode	|	address	|	value	|			-
 5 	|	read ram |	-		 |	mode|		address	|	- 	|				-
 6 	|	end proc |	- 	|		- 	|		-		|	- 	|				-
-7 	|	input 	|	- 		|	mode 	|	- 	|		-	 |				-
+7 	|	system time 	|	- 		|	- 	|	- 	|		-	 |				-
+8	|	sleep	|	time (milliseconds)		|	-	|	-	|	-	|	-
+9 	|	make directory 	|	- 		|	- 	|	- 	|		folder name	 |				-
+10 	|	delete file 	|	- 		|	- 	|	- 	|		file name	 |				-
+11 	|	delete folder 	|	- 		|	- 	|	- 	|		folder name	 |				-
 
 
  * `print`: prints a value to the command line
@@ -149,13 +155,28 @@ eax | name | ebx | ecx | edx | de | df
  * `end process`: ends process early
  	* __eax__: 6
  
- * `input`: get a user input
+ * `system time`: get the current time (returned to eax)
  	* __eax__: 7
- 	* __ecx__: mode (mode 0: int (to eax), 1: string (to de))
+ 
+ * `sleep`: sleep for an amount of seconds
+ 	* __eax__: 8
+ 	* __ebx__: seconds
+
+ * `make directory`: make a folder
+ 	* __eax__: 9
+ 	* __de__: folder name
+
+ * `delete file`: remove a file
+ 	* __eax__: 10
+ 	* __de__: folder name
+
+ * `delete directory`: remove a folder
+ 	* __eax__: 11
+ 	* __de__: folder name
 
 --------------------------------------------------------------------------------------------------
 
-##### Machine Code: 
+#### Machine Code: 
 Each line of assembly is translated into 8 bytes. Each group is split into four groups of two.
 
 1st group: opcode\

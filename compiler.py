@@ -1,4 +1,4 @@
-code = open('examples/even.em', 'r').read().lower().split('\n')
+code = open('examples/time.em', 'r').read().lower().split('\n')
 machine = []
 
 reference = {
@@ -209,4 +209,4 @@ while i < len(machine):
         del machine[i + 1]
     i += 1
 
-open('a.out', 'w').write(' '.join(machine))
+open('examples/compiled/a.out', 'w').write(' '.join(machine))
