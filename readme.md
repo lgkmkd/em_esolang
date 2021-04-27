@@ -18,7 +18,8 @@ assembly like language is compiled into byte machine code that is loaded into an
 - [ ] - sockets
 - [ ] add more features inspired by intel syntax
 - [ ] - pointers
-\
+
+
 - [ ] write c compiler in it (Kapp)
 
 -------------------------------------------------------------------------------------------------------------
