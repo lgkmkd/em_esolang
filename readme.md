@@ -1,6 +1,6 @@
 ## Em (esolang)
 
-***GOTO AND JMP ARE CURRENTLY BROKEN, WILL BE FIXED IN NEXT VERSION***
+***GOTO AND JMP ARE CURRENTLY BROKEN, WILL BE FIXED WHEN I STOP PROCRASTINATING***
 
 esoteric language (very) loosely based on cpu architecture. 
 
@@ -19,8 +19,7 @@ assembly like language is compiled into byte machine code that is loaded into an
 - [ ] add more features inspired by intel syntax
 - [ ] - pointers
 \
-\
-- [ ] write c compiler in it (Kap)
+- [ ] write c compiler in it (Kapp)
 
 -------------------------------------------------------------------------------------------------------------
 
