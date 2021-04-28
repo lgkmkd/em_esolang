@@ -1,4 +1,4 @@
-code = open('examples/time.em', 'r').read().lower().split('\n')
+code = open('examples/test.em', 'r').read().lower().split('\n')
 machine = []
 
 reference = {
@@ -30,9 +30,6 @@ for line in code:
     
     if(args[0] == 'syscall'):
         machine.append('01000000')
-    
-    if(args[0] == 'x'):
-        machine.append('0X000000')
     
     if(args[0] == 'mov'):
         ins = []
@@ -199,6 +196,19 @@ for line in code:
         ins = []
         ins.append('18' + hex(int(args[1]))[2:].zfill(2) + reference[args[2]] + '00')
         machine.append(''.join(ins))
+    
+    if(args[0] == 'inc'):
+        ins = []
+        ins.append('19' + reference[args[1]] + '00'*2)
+        machine.append(''.join(ins))
+    
+    if(args[0] == 'dec'):
+        ins = []
+        ins.append('20' + reference[args[1]] + '00'*2)
+        machine.append(''.join(ins))
+    
+    if(args[0] == 'memdump'):
+        machine.append('21000000')
 
 i = 0
 while i < len(machine):

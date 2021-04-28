@@ -14,8 +14,8 @@ class CPU:
 		print('rom: ', self.mem.rom, '\n')
 		print('ram: ', self.mem.ram, '\n')
 		print('stack: ', self.mem.stack, '\n')
-		print('start time: {}, ended: {}'.format(self.start_time, self.end_proc))
-		print(time.time())
+		print('start time: {}, ended: '.format(self.start_time), end='')
+		print(int(time.time()))
 	
 	def run_proc(self):
 		self.end_proc = 0
@@ -30,13 +30,11 @@ class CPU:
 		a1 = self.mem.rom[self.mem.registers['ESI']][2:4]
 		a2 = self.mem.rom[self.mem.registers['ESI']][4:6]
 		a3 = self.mem.rom[self.mem.registers['ESI']][6:8]
+		
 		if(self.mem.stack):
 			self.mem.registers['ESP'] = self.mem.stack[-1]
 		else:
 			self.mem.registers['ESP'] = 0
-		
-		if(op == '0X'):
-			self.dump_mem()
 		
 		if(op == '01'): #  syscall
 			self.kernel.call(self)
@@ -161,6 +159,15 @@ class CPU:
 		elif(op == '18'): # jnz
 			if(self.mem.registers[self.mem.reference[a2]] != 0):
 				self.mem.registers['ESI'] = self.mem.ram['labels'][int(a1, 16)]
+		
+		elif(op == '19'): # inc
+			self.mem.registers[self.mem.reference[a1]] += 1
+		
+		elif(op == '20'): # dec
+			self.mem.registers[self.mem.reference[a1]] -= 1
+		
+		elif(op == '21'): # memdump
+			self.dump_mem()
 
 class KERNEL:
 	def call(self, processor):
